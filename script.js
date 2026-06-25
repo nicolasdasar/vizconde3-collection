@@ -197,5 +197,13 @@
     }, 1200);
   });
 
+  /* ── MARQUEE PAUSE ON HOVER ── */
+  const mqWrap  = document.getElementById('marqueeWrap');
+  const mqTrack = document.getElementById('marqueeTrack');
+  if (mqWrap && mqTrack) {
+    mqWrap.addEventListener('mouseenter', () => mqTrack.classList.add('paused'));
+    mqWrap.addEventListener('mouseleave', () => mqTrack.classList.remove('paused'));
+  }
+
   console.log('✦ VCM3 V2 — DASAR Gestión · Loaded');
 })();

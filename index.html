@@ -223,7 +223,7 @@
             <div class="tf-row tf-row-highlight"><span class="tf-key">Garaje</span><span class="tf-val">Plaza incluida</span></div>
             <div class="tf-row tf-row-highlight"><span class="tf-key">Bicicleta</span><span class="tf-val">Plaza incluida</span></div>
             <div class="tf-row"><span class="tf-key">Superficie</span><span class="tf-val pl-val" data-p1="73,85 m²" data-p2="73,85 m²">73,85 m²</span></div>
-            <div class="tf-row"><span class="tf-key">Precio</span><span class="tf-val pl-val" data-p1="850.000 €" data-p2="870.000 €">850.000 €</span> <small class="iva-tag">+ IVA (10%)</small></div>
+            <div class="tf-row"><span class="tf-key">Precio</span><span class="tf-val"><span class="pl-val" data-p1="850.000 €" data-p2="870.000 €">850.000 €</span> <small class="iva-tag">+ IVA (10%)</small></span></div>
           </div>
           <div class="tipo-brands">
             <span>PORCELANOSA</span><span>ROCASA</span><span>NOKEN</span><span>GAMADECOR</span>
@@ -266,7 +266,7 @@
             <div class="tf-row tf-row-highlight"><span class="tf-key">Garaje</span><span class="tf-val">Plaza incluida</span></div>
             <div class="tf-row tf-row-highlight"><span class="tf-key">Bicicleta</span><span class="tf-val">Plaza incluida</span></div>
             <div class="tf-row"><span class="tf-key">Superficie</span><span class="tf-val pl-val" data-p1="76,41 m²" data-p2="76,41 m²">76,41 m²</span></div>
-            <div class="tf-row"><span class="tf-key">Precio</span><span class="tf-val pl-val" data-p1="875.000 €" data-p2="895.000 €">875.000 €</span> <small class="iva-tag">+ IVA (10%)</small></div>
+            <div class="tf-row"><span class="tf-key">Precio</span><span class="tf-val"><span class="pl-val" data-p1="875.000 €" data-p2="895.000 €">875.000 €</span> <small class="iva-tag">+ IVA (10%)</small></span></div>
           </div>
           <div class="tipo-brands">
             <span>PORCELANOSA</span><span>ROCASA</span><span>NOKEN</span><span>GAMADECOR</span>
@@ -306,7 +306,7 @@
             <div class="tf-row tf-row-highlight"><span class="tf-key">Garaje</span><span class="tf-val">Plaza incluida</span></div>
             <div class="tf-row tf-row-highlight"><span class="tf-key">Bicicleta</span><span class="tf-val">Plaza incluida</span></div>
             <div class="tf-row"><span class="tf-key">Superficie</span><span class="tf-val pl-val" data-p1="56,28 m²" data-p2="56,28 m²">56,28 m²</span></div>
-            <div class="tf-row"><span class="tf-key">Precio</span><span class="tf-val pl-val" data-p1="630.000 €" data-p2="650.000 €">630.000 €</span> <small class="iva-tag">+ IVA (10%)</small></div>
+            <div class="tf-row"><span class="tf-key">Precio</span><span class="tf-val"><span class="pl-val" data-p1="630.000 €" data-p2="650.000 €">630.000 €</span> <small class="iva-tag">+ IVA (10%)</small></span></div>
           </div>
           <div class="tipo-brands">
             <span>PORCELANOSA</span><span>ROCASA</span><span>NOKEN</span><span>GAMADECOR</span>
@@ -336,19 +336,42 @@
 <!-- GALERIA -->
 <section id="galeria" class="section-galeria">
   <div class="galeria-header fade-up">
+    <p class="eyebrow">Renders</p>
     <h2>Cada espacio, una experiencia.</h2>
   </div>
-  <div class="galeria-grid">
-    <div class="gal fade-up"><img src="renders/fachada.png" alt="Fachada" class="img-enhance"></div>
-    <div class="gal fade-up delay-1"><img src="renders/pb_salon.png" alt="Salon PB" class="img-enhance"></div>
-    <div class="gal gal-tall fade-up delay-2"><img src="renders/1a_bano.png" alt="Bano 1A" class="img-enhance"></div>
-    <div class="gal fade-up"><img src="renders/1a_salon.png" alt="Salon 1A" class="img-enhance"></div>
-    <div class="gal fade-up delay-1"><img src="renders/pb_bano.png" alt="Bano PB" class="img-enhance"></div>
-    <div class="gal gal-wide fade-up"><img src="renders/1b_salon2.png" alt="Salon Comedor 1B" class="img-enhance"></div>
-    <div class="gal fade-up delay-2"><img src="renders/1b_cocina.png" alt="Cocina 1B" class="img-enhance"></div>
-    <div class="gal fade-up"><img src="renders/1a_aseo.png" alt="Aseo 1A" class="img-enhance"></div>
-    <div class="gal fade-up delay-1"><img src="renders/1a_dormitorio.png" alt="Dormitorio" class="img-enhance"></div>
-    <div class="gal fade-up delay-2"><img src="renders/1a_dormitorio2.png" alt="Dormitorio 2" class="img-enhance"></div>
+  <!-- Infinite marquee strip -->
+  <div class="marquee-wrap" id="marqueeWrap">
+    <div class="marquee-track" id="marqueeTrack">
+      <div class="mq-item"><img src="renders/fachada.png"        alt="Fachada"          class="img-enhance"></div>
+      <div class="mq-item"><img src="renders/pb_salon.png"       alt="Salón PB"         class="img-enhance"></div>
+      <div class="mq-item"><img src="renders/1a_salon.png"       alt="Salón 1A"         class="img-enhance"></div>
+      <div class="mq-item"><img src="renders/1a_dormitorio.png"  alt="Dormitorio 1A"     class="img-enhance"></div>
+      <div class="mq-item"><img src="renders/1a_dormitorio2.png" alt="Dormitorio 2"       class="img-enhance"></div>
+      <div class="mq-item"><img src="renders/1a_bano.png"        alt="Baño 1A"           class="img-enhance"></div>
+      <div class="mq-item"><img src="renders/1a_aseo.png"        alt="Aseo 1A"           class="img-enhance"></div>
+      <div class="mq-item"><img src="renders/pb_bano.png"        alt="Baño PB"           class="img-enhance"></div>
+      <div class="mq-item"><img src="renders/1b_salon2.png"      alt="Salón 1B"          class="img-enhance"></div>
+      <div class="mq-item"><img src="renders/1b_cocina.png"      alt="Cocina 1B"         class="img-enhance"></div>
+      <div class="mq-item"><img src="renders/1c_estancia.png"    alt="Estancia 1C"       class="img-enhance"></div>
+      <div class="mq-item"><img src="renders/1c_cocina.png"      alt="Cocina 1C"         class="img-enhance"></div>
+      <div class="mq-item"><img src="renders/1c_bano.png"        alt="Baño 1C"           class="img-enhance"></div>
+      <div class="mq-item"><img src="renders/1b_aseo.png"        alt="Aseo 1B"           class="img-enhance"></div>
+      <!-- duplicate for seamless loop -->
+      <div class="mq-item"><img src="renders/fachada.png"        alt="Fachada"          class="img-enhance"></div>
+      <div class="mq-item"><img src="renders/pb_salon.png"       alt="Salón PB"         class="img-enhance"></div>
+      <div class="mq-item"><img src="renders/1a_salon.png"       alt="Salón 1A"         class="img-enhance"></div>
+      <div class="mq-item"><img src="renders/1a_dormitorio.png"  alt="Dormitorio 1A"     class="img-enhance"></div>
+      <div class="mq-item"><img src="renders/1a_dormitorio2.png" alt="Dormitorio 2"       class="img-enhance"></div>
+      <div class="mq-item"><img src="renders/1a_bano.png"        alt="Baño 1A"           class="img-enhance"></div>
+      <div class="mq-item"><img src="renders/1a_aseo.png"        alt="Aseo 1A"           class="img-enhance"></div>
+      <div class="mq-item"><img src="renders/pb_bano.png"        alt="Baño PB"           class="img-enhance"></div>
+      <div class="mq-item"><img src="renders/1b_salon2.png"      alt="Salón 1B"          class="img-enhance"></div>
+      <div class="mq-item"><img src="renders/1b_cocina.png"      alt="Cocina 1B"         class="img-enhance"></div>
+      <div class="mq-item"><img src="renders/1c_estancia.png"    alt="Estancia 1C"       class="img-enhance"></div>
+      <div class="mq-item"><img src="renders/1c_cocina.png"      alt="Cocina 1C"         class="img-enhance"></div>
+      <div class="mq-item"><img src="renders/1c_bano.png"        alt="Baño 1C"           class="img-enhance"></div>
+      <div class="mq-item"><img src="renders/1b_aseo.png"        alt="Aseo 1B"           class="img-enhance"></div>
+    </div>
   </div>
   <p class="galeria-disclaimer">Las im&aacute;genes y renders mostrados son ilustrativos y no constituyen una representaci&oacute;n exacta del proyecto final, que podr&aacute; estar sujeto a modificaciones t&eacute;cnicas o de dise&ntilde;o.</p>
 </section>
@@ -506,12 +529,12 @@
           <div class="ct-img ct-img-gold"><img src="renders/1c_estancia.png" alt="Entrega" class="img-enhance"></div>
           <div class="ct-dot ct-dot-gold"></div>
           <div class="ct-date ct-date-gold">Sep '27</div>
-          <div class="ct-label ct-label-gold">Entrega de Viviendas</div>
+          <div class="ct-label ct-label-gold">Entrega Prevista de Viviendas</div>
         </div>
       </div>
     </div>
 
-    <p class="cal-nota fade-up delay-3">Noviembre 2026 · Inicio de obra &nbsp;·&nbsp; Septiembre 2027 · Entrega de viviendas</p>
+    <p class="cal-nota fade-up delay-3">Noviembre 2026 &nbsp;&middot;&nbsp; Inicio de obra &nbsp;&middot;&nbsp; Septiembre 2027 &nbsp;&middot;&nbsp; Entrega prevista de viviendas</p>
   </div>
 </section>
 
