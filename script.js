@@ -177,12 +177,12 @@
   /* ── BACK TO TOP ── */
   backTop.addEventListener('click', () => window.scroll({ top: 0, behavior: 'smooth' }));
 
-  /* ── CONTACT FORM → submify fetch no-cors ── */
+  /* ── CONTACT FORM → Microsoft Graph API via Vercel ── */
   const form      = document.getElementById('contactForm');
   const success   = document.getElementById('formSuccess');
   const submitBtn = document.getElementById('submitBtn');
 
-  form?.addEventListener('submit', e => {
+  form?.addEventListener('submit', async e => {
     e.preventDefault();
 
     const nombre  = document.getElementById('nombre')?.value.trim();
@@ -197,34 +197,42 @@
     submitBtn.textContent = 'Enviando...';
     submitBtn.disabled = true;
 
-    const data = new FormData(form);
+    try {
+      const res = await fetch('https://vcm3-email-api.vercel.app/api/send', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          nombre:    nombre,
+          apellidos: document.getElementById('apellidos')?.value.trim() || '',
+          email:     email,
+          telefono:  document.getElementById('telefono')?.value.trim() || '',
+          tipologia: document.getElementById('tipologia')?.value || '',
+          mensaje:   document.getElementById('mensaje')?.value.trim() || '',
+        })
+      });
 
-    fetch('https://submify.vercel.app/info@dasargestion.com', {
-      method: 'POST',
-      body: data,
-      mode: 'no-cors'
-    })
-    .then(() => {
-      /* no-cors siempre resuelve si el servidor recibe la petición */
-      submitBtn.textContent = '✓ Enviado';
-      submitBtn.style.background = '#5e7a5a';
-      if (success) {
-        success.style.display = 'block';
-        success.textContent = 'Solicitud recibida. Nos pondremos en contacto en menos de 24 horas.';
+      if (res.ok) {
+        submitBtn.textContent = '✓ Enviado';
+        submitBtn.style.background = '#5e7a5a';
+        if (success) {
+          success.style.display = 'block';
+          success.textContent = 'Solicitud recibida. Nos pondremos en contacto en menos de 24 horas.';
+        }
+        setTimeout(() => {
+          form.reset();
+          submitBtn.textContent = 'Enviar solicitud';
+          submitBtn.disabled = false;
+          submitBtn.style.background = '';
+          if (success) success.style.display = 'none';
+        }, 5000);
+      } else {
+        throw new Error('Error del servidor');
       }
-      setTimeout(() => {
-        form.reset();
-        submitBtn.textContent = 'Enviar solicitud';
-        submitBtn.disabled = false;
-        submitBtn.style.background = '';
-        if (success) success.style.display = 'none';
-      }, 5000);
-    })
-    .catch(() => {
+    } catch {
       submitBtn.textContent = 'Enviar solicitud';
       submitBtn.disabled = false;
-      alert('Sin conexión. Por favor, escríbenos a info@dasargestion.com');
-    });
+      alert('Error al enviar. Por favor, contáctanos en info@dasargestion.com');
+    }
   });
 
   /* ── MARQUEE PAUSE ON HOVER ── */
