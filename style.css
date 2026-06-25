@@ -100,8 +100,8 @@ a { text-decoration: none; color: inherit; transition: var(--trans); }
   position: absolute; inset: 0;
   background-size: cover; background-position: center center;
   background-repeat: no-repeat;
-  filter: blur(18px) brightness(0.45) saturate(0.7);
-  transform: scale(1.05);
+  filter: blur(22px) brightness(3) saturate(0.2);
+  transform: scale(1.08);
 }
 .hero-bg {
   position: absolute; inset: 0;
