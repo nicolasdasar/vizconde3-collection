@@ -97,22 +97,15 @@ a { text-decoration: none; color: inherit; transition: var(--trans); }
 
 /* ══════════════ HERO ══════════════ */
 #hero { position: relative; height: 100svh; min-height: 600px; overflow: hidden; background: var(--dark); }
-.hero-bg-blur {
-  position: absolute; inset: 0;
-  background-size: cover; background-position: center center;
-  background-repeat: no-repeat;
-  filter: blur(22px) brightness(3) saturate(0.2);
-  transform: scale(1.08);
-}
 .hero-bg {
   position: absolute; inset: 0;
-  background-size: contain; background-position: center center;
+  background-size: cover; background-position: center center;
   background-repeat: no-repeat;
 }
 
 .hero-overlay {
   position: absolute; inset: 0;
-  background: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.78) 100%);
+  background: linear-gradient(180deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.35) 40%, rgba(0,0,0,0.65) 100%);
 }
 .hero-content {
   position: relative; z-index: 10; height: 100%;
@@ -129,13 +122,13 @@ a { text-decoration: none; color: inherit; transition: var(--trans); }
 .hero-t1 {
   font-size: clamp(2.2rem, 5.5vw, 4.8rem);
   font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase;
-  line-height: 1.05; color: #ffffff;
-  text-shadow: 0 2px 16px rgba(0,0,0,0.7), 0 0 40px rgba(0,0,0,0.4);
+  line-height: 1.05; color: #f5efe6;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.8), 0 0 60px rgba(0,0,0,0.5);
 }
 .hero-t2 {
   font-size: clamp(0.9rem, 2vw, 1.25rem);
-  font-weight: 400; letter-spacing: 0.1em; color: #ffffff; font-style: italic;
-  text-shadow: 0 1px 10px rgba(0,0,0,0.6);
+  font-weight: 400; letter-spacing: 0.12em; color: #d4c9b5; font-style: italic;
+  text-shadow: 0 1px 10px rgba(0,0,0,0.7);
 }
 .hero-sub {
   font-size: clamp(0.82rem, 1.3vw, 0.96rem); font-weight: 400; line-height: 1.85;
