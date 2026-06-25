@@ -68,13 +68,14 @@ a { text-decoration: none; color: inherit; transition: var(--trans); }
 .main-logo { height: 58px; width: auto; transition: all 0.35s; }
 #header.scrolled .main-logo { height: 44px; }
 
-.desktop-nav { display: flex; align-items: center; gap: 1.8rem; }
+.desktop-nav { display: flex; align-items: center; gap: 1.2rem; flex-wrap: nowrap; }
 .desktop-nav a {
-  font-size: 12px; font-weight: 500; letter-spacing: 0.08em;
+  font-size: 11px; font-weight: 500; letter-spacing: 0.07em;
   text-transform: uppercase; color: var(--mid); transition: color 0.25s;
+  white-space: nowrap;
 }
 .desktop-nav a:hover { color: var(--sage-dark); }
-.nav-btn-cta { background: var(--sage) !important; color: #fff !important; padding: 0.6rem 1.5rem; font-size: 11px !important; }
+.nav-btn-cta { background: var(--sage) !important; color: #fff !important; padding: 0.55rem 1.2rem; font-size: 10px !important; white-space: nowrap; }
 .nav-btn-cta:hover { background: var(--sage-dark) !important; }
 
 .burger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 0.4rem; }
