@@ -177,37 +177,19 @@
   /* ── BACK TO TOP ── */
   backTop.addEventListener('click', () => window.scroll({ top: 0, behavior: 'smooth' }));
 
-  /* ── CONTACT FORM → EmailJS ── */
+  /* ── CONTACT FORM → submify.vercel.app (igual que Campón) ── */
   const form      = document.getElementById('contactForm');
   const success   = document.getElementById('formSuccess');
   const submitBtn = document.getElementById('submitBtn');
 
   form?.addEventListener('submit', e => {
-    e.preventDefault();
-
     const nombre  = document.getElementById('nombre')?.value.trim();
     const email   = document.getElementById('email')?.value.trim();
     const privacy = document.getElementById('privacy')?.checked;
-
     if (!nombre || !email || !privacy) {
+      e.preventDefault();
       alert('Por favor, completa los campos obligatorios y acepta la política de privacidad.');
-      return;
     }
-
-    submitBtn.textContent = 'Enviando...';
-    submitBtn.disabled = true;
-
-    emailjs.sendForm('TU_SERVICE_ID', 'TU_TEMPLATE_ID', form)
-      .then(() => {
-        form.style.display = 'none';
-        if (success) success.style.display = 'block';
-      })
-      .catch(err => {
-        console.error('EmailJS error:', err);
-        submitBtn.textContent = 'Enviar solicitud';
-        submitBtn.disabled = false;
-        alert('Error al enviar. Por favor, escríbenos directamente a info@dasargestion.com');
-      });
   });
 
   /* ── MARQUEE PAUSE ON HOVER ── */
@@ -220,3 +202,28 @@
 
   console.log('✦ VCM3 V2 — DASAR Gestión · Loaded');
 })();
+
+/* ── sendContactForm — igual que Campón Salinas ── */
+function sendContactForm(event) {
+  const btn = document.getElementById('submitBtn');
+  const fb  = document.getElementById('formSuccess');
+  btn.disabled = true;
+  btn.textContent = 'Enviando...';
+  btn.style.opacity = '0.6';
+  setTimeout(() => {
+    btn.textContent = '✓ Enviado';
+    btn.style.background = '#5e7a5a';
+    if (fb) {
+      fb.style.display = 'block';
+      fb.textContent = 'Hemos recibido su consulta. Nos pondremos en contacto en menos de 24 horas.';
+    }
+    setTimeout(() => {
+      document.getElementById('contactForm')?.reset();
+      btn.disabled = false;
+      btn.textContent = 'Enviar solicitud';
+      btn.style.opacity = '1';
+      btn.style.background = '';
+      if (fb) fb.style.display = 'none';
+    }, 5000);
+  }, 1500);
+}
