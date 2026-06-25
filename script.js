@@ -177,7 +177,7 @@
   /* ── BACK TO TOP ── */
   backTop.addEventListener('click', () => window.scroll({ top: 0, behavior: 'smooth' }));
 
-  /* ── CONTACT FORM ── */
+  /* ── CONTACT FORM → FormSubmit AJAX ── */
   const form = document.getElementById('contactForm');
   const success = document.getElementById('formSuccess');
   const submitBtn = document.getElementById('submitBtn');
@@ -191,10 +191,29 @@
     }
     submitBtn.textContent = 'Enviando...';
     submitBtn.disabled = true;
-    setTimeout(() => {
-      form.style.display = 'none';
-      if (success) { success.style.display = 'block'; }
-    }, 1200);
+
+    const data = new FormData(form);
+    fetch('https://formsubmit.co/ajax/info@dasargestion.com', {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: data
+    })
+    .then(res => res.json())
+    .then(json => {
+      if (json.success === 'true' || json.success === true) {
+        form.style.display = 'none';
+        if (success) success.style.display = 'block';
+      } else {
+        submitBtn.textContent = 'Enviar solicitud';
+        submitBtn.disabled = false;
+        alert('Ha ocurrido un error. Por favor, inténtalo de nuevo o escríbenos a info@dasargestion.com');
+      }
+    })
+    .catch(() => {
+      submitBtn.textContent = 'Enviar solicitud';
+      submitBtn.disabled = false;
+      alert('Error de conexión. Por favor, inténtalo de nuevo o escríbenos a info@dasargestion.com');
+    });
   });
 
   /* ── MARQUEE PAUSE ON HOVER ── */
