@@ -296,7 +296,7 @@ h2 { font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 300; line-height: 1.15; l
 .gal:hover img { transform: scale(1.06); }
 .galeria-disclaimer {
   text-align: center; padding: 1.5rem 2.5rem 0;
-  font-size: 11px; color: rgba(255,255,255,0.7); line-height: 1.8; letter-spacing: 0.03em; font-weight: 400;
+  font-size: 13px; color: rgba(255,255,255,0.92); line-height: 1.8; letter-spacing: 0.03em; font-weight: 600;
 }
 
 /* ══════════════ CALIDADES ══════════════ */
