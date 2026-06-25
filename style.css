@@ -324,7 +324,7 @@ h2 { font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 300; line-height: 1.15; l
 .section-calidades h2 { color: var(--ink); }
 .section-calidades .eyebrow { color: var(--sage-dark); }
 .section-calidades .section-sub { color: var(--mid); }
-.cal-brands { display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; background: var(--border-dk); margin-bottom: 4rem; border: 1px solid var(--border-dk); }
+.cal-brands { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--border-dk); margin-bottom: 4rem; border: 1px solid var(--border-dk); }
 .cal-brand-item { background: var(--white); padding: 2.5rem 2rem; transition: background 0.3s; }
 .cal-brand-item:hover { background: var(--sage-pale); }
 .cb-logo { font-size: 11px; letter-spacing: 0.3em; font-weight: 800; text-transform: uppercase; color: var(--sage-dark); margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border-dk); }
