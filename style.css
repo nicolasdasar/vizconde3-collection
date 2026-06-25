@@ -267,6 +267,13 @@ h2 { font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 300; line-height: 1.15; l
 .tg-thumb:hover img { transform: scale(1.08); }
 
 .tipo-info { padding-top: 0.5rem; }
+/* ── PLANTA P1/P2 TOGGLE ── */
+.planta-toggle { display: inline-flex; border: 1.5px solid var(--sage); border-radius: 4px; overflow: hidden; margin-bottom: 0.9rem; }
+.pl-btn { background: none; border: none; font-family: var(--font); font-size: 10px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; padding: 0.45rem 1.1rem; cursor: pointer; color: var(--sage); transition: background 0.2s, color 0.2s; }
+.pl-btn + .pl-btn { border-left: 1.5px solid var(--sage); }
+.pl-btn.active { background: var(--sage); color: #fff; }
+.pl-btn:not(.active):hover { background: rgba(107,133,107,0.08); }
+
 .tipo-tag { display: inline-block; background: var(--sage); color: #fff; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 700; padding: 0.35rem 1rem; margin-bottom: 1rem; }
 .tipo-info h3 { font-size: 1.8rem; font-weight: 300; color: var(--ink); margin-bottom: 0.8rem; }
 .tipo-desc { font-size: 0.85rem; line-height: 1.85; color: var(--mid); margin-bottom: 1.8rem; }

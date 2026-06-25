@@ -149,13 +149,11 @@
     <div class="tipo-selector fade-up delay-1">
       <button class="ts-btn active" data-t="pb">Planta Baja</button>
       <div class="ts-sep"></div>
-      <button class="ts-btn" data-t="1a">1A · Tipo A</button>
+      <button class="ts-btn" data-t="1a">Tipología A</button>
       <div class="ts-sep"></div>
-      <button class="ts-btn" data-t="2a">2A · Tipo A</button>
+      <button class="ts-btn" data-t="1b">Tipología B</button>
       <div class="ts-sep"></div>
-      <button class="ts-btn" data-t="1b">Tipología B <span class="ts-count">x2</span></button>
-      <div class="ts-sep"></div>
-      <button class="ts-btn" data-t="1c">Tipología C <span class="ts-count">x2</span></button>
+      <button class="ts-btn" data-t="1c">Tipología C</button>
     </div>
 
     <!-- PB -->
@@ -213,7 +211,11 @@
           </div>
         </div>
         <div class="tipo-info fade-up">
-          <div class="tipo-tag">Vivienda 1A · Planta 1</div>
+          <div class="planta-toggle" data-tipo="1a">
+            <button class="pl-btn active" data-planta="p1">Planta 1</button>
+            <button class="pl-btn" data-planta="p2">Planta 2</button>
+          </div>
+          <div class="tipo-tag" id="tag-1a">Vivienda 1A · Planta 1</div>
           <h3>2 Dormitorios</h3>
           <p class="tipo-desc">Salón-comedor con cocina abierta integrada de frentes en antracita mate. Ventana corredera de cuatro hojas a calle. Dormitorio principal con armario empotrado a toda altura y acceso al patio interior. Baño principal más aseo de cortesía.</p>
           <div class="tipo-features">
@@ -221,46 +223,8 @@
             <div class="tf-row"><span class="tf-key">Baños</span><span class="tf-val">1 baño + 1 aseo</span></div>
             <div class="tf-row tf-row-highlight"><span class="tf-key">Garaje</span><span class="tf-val">Plaza incluida</span></div>
             <div class="tf-row tf-row-highlight"><span class="tf-key">Bicicleta</span><span class="tf-val">Plaza incluida</span></div>
-            <div class="tf-row"><span class="tf-key">Superficie</span><span class="tf-val">A confirmar</span></div>
-            <div class="tf-row"><span class="tf-key">Precio</span><span class="tf-val">Consultar</span></div>
-          </div>
-          <div class="tipo-brands">
-            <span>PORCELANOSA</span><span>ROCASA</span><span>NOKEN</span><span>GAMADECOR</span>
-          </div>
-          <div class="tipo-actions">
-            <a href="planos/1A.pdf" target="_blank" class="btn-outline-sage">Ver plano</a>
-            <a href="#contacto" class="btn-sage-sm">Solicitar info</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- 2A -->
-    <div class="tipo-content" id="tc-2a">
-      <div class="tipo-layout">
-        <div class="tipo-gallery">
-          <div class="tg-main">
-            <img src="renders/1a_salon.png" alt="2A - Salón" class="tg-hero active img-enhance" id="2a-main">
-          </div>
-          <div class="tg-thumbs">
-            <div class="tg-thumb active" data-img="renders/1a_salon.png" data-target="2a-main" title="Salón Comedor"><img src="renders/1a_salon.png" alt="Salón" class="img-enhance"></div>
-            <div class="tg-thumb" data-img="renders/1a_dormitorio.png" data-target="2a-main" title="Dormitorio Principal"><img src="renders/1a_dormitorio.png" alt="Dormitorio" class="img-enhance"></div>
-            <div class="tg-thumb" data-img="renders/1a_dormitorio2.png" data-target="2a-main" title="Dormitorio 2"><img src="renders/1a_dormitorio2.png" alt="Dormitorio 2" class="img-enhance"></div>
-            <div class="tg-thumb" data-img="renders/1a_bano.png" data-target="2a-main" title="Baño"><img src="renders/1a_bano.png" alt="Baño" class="img-enhance"></div>
-            <div class="tg-thumb" data-img="renders/1a_aseo.png" data-target="2a-main" title="Aseo"><img src="renders/1a_aseo.png" alt="Aseo" class="img-enhance"></div>
-          </div>
-        </div>
-        <div class="tipo-info fade-up">
-          <div class="tipo-tag">Vivienda 2A · Planta 2</div>
-          <h3>2 Dormitorios</h3>
-          <p class="tipo-desc">Misma distribución que 1A, en segunda planta. Salón-comedor con cocina abierta integrada de frentes en antracita mate. Dormitorio principal con armario empotrado a toda altura. Baño principal más aseo de cortesía.</p>
-          <div class="tipo-features">
-            <div class="tf-row"><span class="tf-key">Dormitorios</span><span class="tf-val">2</span></div>
-            <div class="tf-row"><span class="tf-key">Baños</span><span class="tf-val">1 baño + 1 aseo</span></div>
-            <div class="tf-row tf-row-highlight"><span class="tf-key">Garaje</span><span class="tf-val">Plaza incluida</span></div>
-            <div class="tf-row tf-row-highlight"><span class="tf-key">Bicicleta</span><span class="tf-val">Plaza incluida</span></div>
-            <div class="tf-row"><span class="tf-key">Superficie</span><span class="tf-val">A confirmar</span></div>
-            <div class="tf-row"><span class="tf-key">Precio</span><span class="tf-val">Consultar</span></div>
+            <div class="tf-row"><span class="tf-key">Superficie</span><span class="tf-val pl-val" data-p1="A confirmar" data-p2="A confirmar">A confirmar</span></div>
+            <div class="tf-row"><span class="tf-key">Precio</span><span class="tf-val pl-val" data-p1="Consultar" data-p2="Consultar">Consultar</span></div>
           </div>
           <div class="tipo-brands">
             <span>PORCELANOSA</span><span>ROCASA</span><span>NOKEN</span><span>GAMADECOR</span>
@@ -290,16 +254,20 @@
           </div>
         </div>
         <div class="tipo-info fade-up">
-          <div class="tipo-tag">Tipologia B · 2 unidades (P1 + P2)</div>
+          <div class="planta-toggle" data-tipo="1b">
+            <button class="pl-btn active" data-planta="p1">Planta 1</button>
+            <button class="pl-btn" data-planta="p2">Planta 2</button>
+          </div>
+          <div class="tipo-tag" id="tag-1b">Vivienda 1B · Planta 1</div>
           <h3>2 Dormitorios</h3>
-          <p class="tipo-desc">Distribucion con cocina independiente lineal en lacado blanco mate, con columna de horno y microondas integrados. Salon-comedor de doble orientacion con ventana panoramica de cuatro hojas. Calacatta Gold continuo en salon y dormitorios.</p>
+          <p class="tipo-desc">Distribución con cocina independiente lineal en lacado blanco mate, con columna de horno y microondas integrados. Salón-comedor de doble orientación con ventana panorámica de cuatro hojas. Calacatta Gold continuo en salón y dormitorios.</p>
           <div class="tipo-features">
             <div class="tf-row"><span class="tf-key">Dormitorios</span><span class="tf-val">2</span></div>
             <div class="tf-row"><span class="tf-key">Baños</span><span class="tf-val">1 baño completo</span></div>
             <div class="tf-row tf-row-highlight"><span class="tf-key">Garaje</span><span class="tf-val">Plaza incluida</span></div>
             <div class="tf-row tf-row-highlight"><span class="tf-key">Bicicleta</span><span class="tf-val">Plaza incluida</span></div>
-            <div class="tf-row"><span class="tf-key">Superficie</span><span class="tf-val">A confirmar</span></div>
-            <div class="tf-row"><span class="tf-key">Precio</span><span class="tf-val">Consultar</span></div>
+            <div class="tf-row"><span class="tf-key">Superficie</span><span class="tf-val pl-val" data-p1="A confirmar" data-p2="A confirmar">A confirmar</span></div>
+            <div class="tf-row"><span class="tf-key">Precio</span><span class="tf-val pl-val" data-p1="Consultar" data-p2="Consultar">Consultar</span></div>
           </div>
           <div class="tipo-brands">
             <span>PORCELANOSA</span><span>ROCASA</span><span>NOKEN</span><span>GAMADECOR</span>
@@ -326,16 +294,20 @@
           </div>
         </div>
         <div class="tipo-info fade-up">
-          <div class="tipo-tag">Tipologia C · 2 unidades (P1 + P2)</div>
+          <div class="planta-toggle" data-tipo="1c">
+            <button class="pl-btn active" data-planta="p1">Planta 1</button>
+            <button class="pl-btn" data-planta="p2">Planta 2</button>
+          </div>
+          <div class="tipo-tag" id="tag-1c">Vivienda 1C · Planta 1</div>
           <h3>1 Dormitorio</h3>
-          <p class="tipo-desc">Espacio de concepto abierto donde un biombo de listones verticales en roble natural separa la zona de noche de la de dia. Pavimento en aparejo espiga 45 grados, cocina en L con frentes gris topo mate y bano completo con Porcelanosa Line Taranto Bone.</p>
+          <p class="tipo-desc">Espacio de concepto abierto donde un biombo de listones verticales en roble natural separa la zona de noche de la de día. Pavimento en aparejo espiga 45 grados, cocina en L con frentes gris topo mate y baño completo con Porcelanosa Line Taranto Bone.</p>
           <div class="tipo-features">
             <div class="tf-row"><span class="tf-key">Dormitorios</span><span class="tf-val">1</span></div>
             <div class="tf-row"><span class="tf-key">Baños</span><span class="tf-val">1 baño completo</span></div>
             <div class="tf-row tf-row-highlight"><span class="tf-key">Garaje</span><span class="tf-val">Plaza incluida</span></div>
             <div class="tf-row tf-row-highlight"><span class="tf-key">Bicicleta</span><span class="tf-val">Plaza incluida</span></div>
-            <div class="tf-row"><span class="tf-key">Superficie</span><span class="tf-val">A confirmar</span></div>
-            <div class="tf-row"><span class="tf-key">Precio</span><span class="tf-val">Consultar</span></div>
+            <div class="tf-row"><span class="tf-key">Superficie</span><span class="tf-val pl-val" data-p1="A confirmar" data-p2="A confirmar">A confirmar</span></div>
+            <div class="tf-row"><span class="tf-key">Precio</span><span class="tf-val pl-val" data-p1="Consultar" data-p2="Consultar">Consultar</span></div>
           </div>
           <div class="tipo-brands">
             <span>PORCELANOSA</span><span>ROCASA</span><span>NOKEN</span><span>GAMADECOR</span>

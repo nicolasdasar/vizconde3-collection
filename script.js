@@ -84,6 +84,28 @@
     });
   })();
 
+  /* ── PLANTA P1 / P2 TOGGLE ── */
+  (function () {
+    const tagLabels = { '1a': ['Vivienda 1A · Planta 1', 'Vivienda 2A · Planta 2'], '1b': ['Vivienda 1B · Planta 1', 'Vivienda 2B · Planta 2'], '1c': ['Vivienda 1C · Planta 1', 'Vivienda 2C · Planta 2'] };
+    document.querySelectorAll('.planta-toggle').forEach(toggle => {
+      const tipo = toggle.dataset.tipo;
+      const plBtns = toggle.querySelectorAll('.pl-btn');
+      const tag = document.getElementById('tag-' + tipo);
+      const panel = toggle.closest('.tipo-content');
+      plBtns.forEach((btn, i) => {
+        btn.addEventListener('click', () => {
+          plBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          const planta = btn.dataset.planta; // 'p1' or 'p2'
+          if (tag && tagLabels[tipo]) tag.textContent = tagLabels[tipo][i];
+          panel.querySelectorAll('.pl-val').forEach(el => {
+            el.textContent = el.dataset[planta] || el.textContent;
+          });
+        });
+      });
+    });
+  })();
+
   /* ── THUMBNAIL GALLERY ── */
   document.querySelectorAll('.tg-thumb').forEach(thumb => {
     thumb.addEventListener('click', () => {
