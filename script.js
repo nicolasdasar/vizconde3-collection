@@ -177,43 +177,37 @@
   /* ── BACK TO TOP ── */
   backTop.addEventListener('click', () => window.scroll({ top: 0, behavior: 'smooth' }));
 
-  /* ── CONTACT FORM → FormSubmit AJAX ── */
-  const form = document.getElementById('contactForm');
-  const success = document.getElementById('formSuccess');
+  /* ── CONTACT FORM → EmailJS ── */
+  const form      = document.getElementById('contactForm');
+  const success   = document.getElementById('formSuccess');
   const submitBtn = document.getElementById('submitBtn');
+
   form?.addEventListener('submit', e => {
     e.preventDefault();
-    if (!document.getElementById('nombre')?.value.trim() ||
-        !document.getElementById('email')?.value.trim() ||
-        !document.getElementById('privacy')?.checked) {
+
+    const nombre  = document.getElementById('nombre')?.value.trim();
+    const email   = document.getElementById('email')?.value.trim();
+    const privacy = document.getElementById('privacy')?.checked;
+
+    if (!nombre || !email || !privacy) {
       alert('Por favor, completa los campos obligatorios y acepta la política de privacidad.');
       return;
     }
+
     submitBtn.textContent = 'Enviando...';
     submitBtn.disabled = true;
 
-    const data = new FormData(form);
-    fetch('https://formsubmit.co/ajax/info@dasargestion.com', {
-      method: 'POST',
-      headers: { 'Accept': 'application/json' },
-      body: data
-    })
-    .then(res => res.json())
-    .then(json => {
-      if (json.success === 'true' || json.success === true) {
+    emailjs.sendForm('TU_SERVICE_ID', 'TU_TEMPLATE_ID', form)
+      .then(() => {
         form.style.display = 'none';
         if (success) success.style.display = 'block';
-      } else {
+      })
+      .catch(err => {
+        console.error('EmailJS error:', err);
         submitBtn.textContent = 'Enviar solicitud';
         submitBtn.disabled = false;
-        alert('Ha ocurrido un error. Por favor, inténtalo de nuevo o escríbenos a info@dasargestion.com');
-      }
-    })
-    .catch(() => {
-      submitBtn.textContent = 'Enviar solicitud';
-      submitBtn.disabled = false;
-      alert('Error de conexión. Por favor, inténtalo de nuevo o escríbenos a info@dasargestion.com');
-    });
+        alert('Error al enviar. Por favor, escríbenos directamente a info@dasargestion.com');
+      });
   });
 
   /* ── MARQUEE PAUSE ON HOVER ── */
