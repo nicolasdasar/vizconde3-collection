@@ -96,13 +96,11 @@ a { text-decoration: none; color: inherit; transition: var(--trans); }
 
 /* ══════════════ HERO ══════════════ */
 #hero { position: relative; height: 100svh; min-height: 600px; overflow: hidden; background: var(--dark); }
-.hero-slides { position: absolute; inset: 0; }
-.hero-slide {
-  position: absolute; inset: 0; background-size: cover; background-position: center;
-  opacity: 0; transition: opacity 1.2s ease;
+.hero-bg {
+  position: absolute; inset: 0;
+  background-size: cover; background-position: center center;
+  background-repeat: no-repeat;
 }
-.hero-slide.active { opacity: 1; animation: kenBurns 7s ease-out forwards; }
-@keyframes kenBurns { from{transform:scale(1)} to{transform:scale(1.05)} }
 
 .hero-overlay {
   position: absolute; inset: 0;
