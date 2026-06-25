@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vizconde 3 Collection — 9 Residencias Unicas · Madrid</title>
+  <meta name="description" content="Vizconde 3 Collection · 9 residencias unicas en Madrid. Rehabilitacion integral con acabados Porcelanosa, cocinas Rocasa, plaza de garaje incluida. 2 aticos en exclusiva.">
+  <meta name="author" content="DASAR Gestion">
+  <meta property="og:title" content="Vizconde 3 Collection — Madrid">
+  <meta property="og:description" content="9 viviendas unicas en Madrid. Donde la historia se encuentra con el lujo contemporaneo.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header id="header">
+  <div class="header-inner">
+    <div class="header-left">
+      <a href="https://www.dasargestion.com" target="_blank" rel="noopener" class="dasar-link">
+        <img src="renders/dasar_logo_color.png" alt="DASAR Gestion" class="dasar-logo">
+      </a>
+    </div>
+    <div class="header-center">
+      <a href="#hero" class="logo-link">
+        <img src="renders/LOGO.png" alt="Vizconde de Matamala 3" class="main-logo">
+      </a>
+    </div>
+    <div class="header-right">
+      <nav class="desktop-nav">
+        <a href="#proyecto">El Proyecto</a>
+        <a href="#viviendas">Elige tu Hogar</a>
+        <a href="#calidades">Calidades</a>
+        <a href="#calendario">Calendario</a>
+        <a href="#ubicacion">Ubicacion</a>
+        <a href="#contacto" class="nav-btn-cta">Contactar</a>
+      </nav>
+      <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile nav -->
+<div class="mobile-nav" id="mobileNav" aria-hidden="true">
+  <div class="mobile-nav-inner">
+    <a href="#proyecto" class="mn-link" onclick="closeMobileNav()">El Proyecto</a>
+    <a href="#viviendas" class="mn-link" onclick="closeMobileNav()">Elige tu Hogar</a>
+    <a href="#calidades" class="mn-link" onclick="closeMobileNav()">Calidades</a>
+    <a href="#calendario" class="mn-link" onclick="closeMobileNav()">Calendario</a>
+    <a href="#ubicacion" class="mn-link" onclick="closeMobileNav()">Ubicacion</a>
+    <a href="#contacto" class="mn-link mn-cta" onclick="closeMobileNav()">Contactar</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-slides" id="heroSlides">
+    <div class="hero-slide active" style="background-image:url('renders/fachada.png')"></div>
+    <div class="hero-slide" style="background-image:url('renders/pb_salon.png')"></div>
+    <div class="hero-slide" style="background-image:url('renders/1a_salon.png')"></div>
+    <div class="hero-slide" style="background-image:url('renders/1a_bano.png')"></div>
+    <div class="hero-slide" style="background-image:url('renders/1c_estancia.png')"></div>
+    <div class="hero-slide" style="background-image:url('renders/1b_salon.png')"></div>
+    <div class="hero-slide" style="background-image:url('renders/pb_bano.png')"></div>
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="hero-location">Madrid · Vizconde de Matamala, 3</p>
+    <h1 class="hero-title">
+      <span class="hero-t1">Vizconde 3 Collection</span>
+      <span class="hero-t2">Donde la Historia se Encuentra con el Lujo</span>
+    </h1>
+    <p class="hero-sub">9 residencias unicas en Madrid. Una rehabilitacion que convierte la arquitectura historica en espacios contemporaneos de excepcion.</p>
+    <div class="hero-actions">
+      <button class="btn-sage" onclick="scrollToSection('#contacto')">Solicitar informacion</button>
+    </div>
+    <p class="hero-price-note">Disponibilidad limitada · 9 residencias · 2 aticos en exclusiva · Plaza de garaje incluida</p>
+  </div>
+  <button class="hero-ctrl prev" id="heroPrev">&#8249;</button>
+  <button class="hero-ctrl next" id="heroNext">&#8250;</button>
+  <div class="hero-indicators" id="heroIndicators"></div>
+  <div class="hero-slide-count" id="heroCount">1 / 7</div>
+  <div class="scroll-hint">
+    <span>Descubrir</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- EL PROYECTO -->
+<section id="proyecto" class="section-proyecto">
+  <div class="container">
+    <div class="proyecto-grid">
+      <div class="proyecto-text fade-up">
+        <p class="eyebrow">El Proyecto</p>
+        <h2>Una rehabilitacion<br>sin precedentes<br>en Madrid.</h2>
+        <p class="body-text">Vizconde de Matamala 3 es la reinvencion de un edificio historico en una de las ubicaciones mas deseadas de Madrid. Nueve residencias de autor donde cada detalle ha sido concebido para crear espacios de maxima calidad y singular belleza.</p>
+        <p class="body-text mt">Acabados Porcelanosa, cocinas Rocasa y carpinteria de aluminio negro en rotura de puente termico componen un nivel de calidad que excede cualquier estandar del mercado. Todas las viviendas incluyen plaza de garaje y trastero de bicicleta.</p>
+        <div class="proyecto-stats">
+          <div class="stat fade-up delay-1">
+            <span class="stat-n" data-count="9">0</span>
+            <span class="stat-l">Residencias</span>
+          </div>
+          <div class="stat fade-up delay-2">
+            <span class="stat-n">4</span>
+            <span class="stat-l">Plantas</span>
+          </div>
+          <div class="stat fade-up delay-3">
+            <span class="stat-n">Sep '27</span>
+            <span class="stat-l">Entrega</span>
+          </div>
+        </div>
+        <div class="garaje-badge fade-up delay-3">
+          <div class="gb-item gb-item-main">Plaza de garaje incluida</div>
+          <div class="gb-item gb-item-main">Plaza de bicicleta incluida</div>
+        </div>
+      </div>
+      <div class="proyecto-img fade-up delay-2">
+        <img src="renders/fachada.png" alt="Fachada Vizconde de Matamala 3" class="img-enhance">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ELIGE TU HOGAR -->
+<section id="viviendas" class="section-viviendas">
+  <div class="container">
+    <div class="section-head fade-up">
+      <p class="eyebrow sage">Las Residencias</p>
+      <h2>Elige tu Hogar.</h2>
+      <p class="section-sub-dark">9 viviendas distribuidas en 4 plantas. 1 en planta baja · 3 en primera · 3 en segunda · 2 aticos en exclusiva.<br>Todas incluyen plaza de garaje y trastero de bicicleta.</p>
+    </div>
+
+    <div class="planta-info fade-up delay-1">
+      <div class="planta-item">
+        <span class="pi-label">Planta Baja</span>
+        <span class="pi-val">1 vivienda · Tipologia PB</span>
+      </div>
+      <div class="planta-sep"></div>
+      <div class="planta-item">
+        <span class="pi-label">Primera Planta</span>
+        <span class="pi-val">3 viviendas · A + B + C</span>
+      </div>
+      <div class="planta-sep"></div>
+      <div class="planta-item">
+        <span class="pi-label">Segunda Planta</span>
+        <span class="pi-val">3 viviendas · A + B + C</span>
+      </div>
+      <div class="planta-sep"></div>
+      <div class="planta-item">
+        <span class="pi-label">Atico</span>
+        <span class="pi-val">2 unidades · Exclusiva</span>
+      </div>
+    </div>
+
+    <div class="tipo-selector fade-up delay-1">
+      <button class="ts-btn active" data-t="pb">Planta Baja</button>
+      <div class="ts-sep"></div>
+      <button class="ts-btn" data-t="1a">Tipologia A <span class="ts-count">x2</span></button>
+      <div class="ts-sep"></div>
+      <button class="ts-btn" data-t="1b">Tipologia B <span class="ts-count">x2</span></button>
+      <div class="ts-sep"></div>
+      <button class="ts-btn" data-t="1c">Tipologia C <span class="ts-count">x2</span></button>
+    </div>
+
+    <!-- PB -->
+    <div class="tipo-content active" id="tc-pb">
+      <div class="tipo-layout">
+        <div class="tipo-gallery">
+          <div class="tg-main">
+            <img src="renders/pb_salon.png" alt="Planta Baja - Salon" class="tg-hero active img-enhance" id="pb-main">
+          </div>
+          <div class="tg-thumbs">
+            <div class="tg-thumb active" data-img="renders/pb_salon.png" data-target="pb-main"><img src="renders/pb_salon.png" alt="Salon" class="img-enhance"></div>
+            <div class="tg-thumb" data-img="renders/pb_dormitorio1.png" data-target="pb-main"><img src="renders/pb_dormitorio1.png" alt="Dormitorio" class="img-enhance"></div>
+            <div class="tg-thumb" data-img="renders/pb_despacho.png" data-target="pb-main"><img src="renders/pb_despacho.png" alt="Despacho" class="img-enhance"></div>
+            <div class="tg-thumb" data-img="renders/pb_dormitorio2.png" data-target="pb-main"><img src="renders/pb_dormitorio2.png" alt="Dormitorio 2" class="img-enhance"></div>
+            <div class="tg-thumb" data-img="renders/pb_bano.png" data-target="pb-main"><img src="renders/pb_bano.png" alt="Bano" class="img-enhance"></div>
+          </div>
+        </div>
+        <div class="tipo-info fade-up">
+          <div class="tipo-tag">Planta Baja · 1 unidad</div>
+          <h3>La Mas Amplia</h3>
+          <p class="tipo-desc">Residencia en planta baja con salon-comedor de doble altura, cocina de autor con isleta central y tres dormitorios, uno de ellos convertible en despacho con libreria a medida. Bano de 12,60 m² con ducha empotrada enrasada al suelo, mampara de vidrio templado y acabados Porcelanosa de primer nivel.</p>
+          <div class="tipo-features">
+            <div class="tf-row"><span class="tf-key">Dormitorios</span><span class="tf-val">3 (incl. despacho)</span></div>
+            <div class="tf-row"><span class="tf-key">Banos</span><span class="tf-val">1 bano completo (12,60 m2)</span></div>
+            <div class="tf-row"><span class="tf-key">Cocina</span><span class="tf-val">Abierta con isleta · Rocasa</span></div>
+            <div class="tf-row"><span class="tf-key">Iluminacion</span><span class="tf-val">Tira LED perimetral 2.700K</span></div>
+            <div class="tf-row tf-row-highlight"><span class="tf-key">Garaje</span><span class="tf-val">Plaza incluida</span></div>
+            <div class="tf-row tf-row-highlight"><span class="tf-key">Bicicleta</span><span class="tf-val">Plaza incluida</span></div>
+            <div class="tf-row"><span class="tf-key">Superficie</span><span class="tf-val">A confirmar</span></div>
+            <div class="tf-row"><span class="tf-key">Precio</span><span class="tf-val">Consultar</span></div>
+          </div>
+          <div class="tipo-brands">
+            <span>PORCELANOSA</span><span>ROCASA</span><span>NOKEN</span><span>GAMADECOR</span>
+          </div>
+          <div class="tipo-actions">
+            <a href="planos/PB.pdf" target="_blank" class="btn-outline-sage">Ver plano</a>
+            <a href="#contacto" class="btn-sage-sm">Solicitar info</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 1A -->
+    <div class="tipo-content" id="tc-1a">
+      <div class="tipo-layout">
+        <div class="tipo-gallery">
+          <div class="tg-main">
+            <img src="renders/1a_salon.png" alt="1A - Salon" class="tg-hero active img-enhance" id="1a-main">
+          </div>
+          <div class="tg-thumbs">
+            <div class="tg-thumb active" data-img="renders/1a_salon.png" data-target="1a-main"><img src="renders/1a_salon.png" alt="Salon" class="img-enhance"></div>
+            <div class="tg-thumb" data-img="renders/1a_dormitorio.png" data-target="1a-main"><img src="renders/1a_dormitorio.png" alt="Dormitorio" class="img-enhance"></div>
+            <div class="tg-thumb" data-img="renders/1a_dormitorio2.png" data-target="1a-main"><img src="renders/1a_dormitorio2.png" alt="Dormitorio 2" class="img-enhance"></div>
+            <div class="tg-thumb" data-img="renders/1a_bano.png" data-target="1a-main"><img src="renders/1a_bano.png" alt="Bano" class="img-enhance"></div>
+            <div class="tg-thumb" data-img="renders/1a_aseo.png" data-target="1a-main"><img src="renders/1a_aseo.png" alt="Aseo" class="img-enhance"></div>
+          </div>
+        </div>
+        <div class="tipo-info fade-up">
+          <div class="tipo-tag">Tipologia A · 2 unidades (P1 + P2)</div>
+          <h3>2 Dormitorios</h3>
+          <p class="tipo-desc">Salon-comedor con cocina abierta integrada de frentes en antracita mate. Ventana corredera de cuatro hojas a calle. Dormitorio principal con armario empotrado a toda altura y acceso al patio interior. Bano principal mas aseo de cortesia.</p>
+          <div class="tipo-features">
+            <div class="tf-row"><span class="tf-key">Dormitorios</span><span class="tf-val">2 (principal + secundario)</span></div>
+            <div class="tf-row"><span class="tf-key">Banos</span><span class="tf-val">1 bano principal + 1 aseo</span></div>
+            <div class="tf-row"><span class="tf-key">Cocina</span><span class="tf-val">Abierta · Frentes antracita · Rocasa</span></div>
+            <div class="tf-row"><span class="tf-key">Pavimento</span><span class="tf-val">Calacatta Gold · Porcelanosa</span></div>
+            <div class="tf-row tf-row-highlight"><span class="tf-key">Garaje</span><span class="tf-val">Plaza incluida</span></div>
+            <div class="tf-row tf-row-highlight"><span class="tf-key">Bicicleta</span><span class="tf-val">Trastero incluido</span></div>
+            <div class="tf-row"><span class="tf-key">Superficie</span><span class="tf-val">A confirmar</span></div>
+            <div class="tf-row"><span class="tf-key">Precio</span><span class="tf-val">Consultar</span></div>
+          </div>
+          <div class="tipo-brands">
+            <span>PORCELANOSA</span><span>ROCASA</span><span>NOKEN</span><span>GAMADECOR</span>
+          </div>
+          <div class="tipo-actions">
+            <a href="planos/1A.pdf" target="_blank" class="btn-outline-sage">Ver plano</a>
+            <a href="#contacto" class="btn-sage-sm">Solicitar info</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 1B -->
+    <div class="tipo-content" id="tc-1b">
+      <div class="tipo-layout">
+        <div class="tipo-gallery">
+          <div class="tg-main">
+            <img src="renders/1b_salon.png" alt="1B - Salon" class="tg-hero active img-enhance" id="1b-main">
+          </div>
+          <div class="tg-thumbs">
+            <div class="tg-thumb active" data-img="renders/1b_salon.png" data-target="1b-main"><img src="renders/1b_salon.png" alt="Salon" class="img-enhance"></div>
+            <div class="tg-thumb" data-img="renders/1b_cocina.png" data-target="1b-main"><img src="renders/1b_cocina.png" alt="Cocina" class="img-enhance"></div>
+            <div class="tg-thumb" data-img="renders/1a_dormitorio.png" data-target="1b-main"><img src="renders/1a_dormitorio.png" alt="Dormitorio Principal" class="img-enhance"></div>
+            <div class="tg-thumb" data-img="renders/1a_dormitorio2.png" data-target="1b-main"><img src="renders/1a_dormitorio2.png" alt="Dormitorio 2" class="img-enhance"></div>
+            <div class="tg-thumb" data-img="renders/1a_bano.png" data-target="1b-main"><img src="renders/1a_bano.png" alt="Bano" class="img-enhance"></div>
+          </div>
+        </div>
+        <div class="tipo-info fade-up">
+          <div class="tipo-tag">Tipologia B · 2 unidades (P1 + P2)</div>
+          <h3>2 Dormitorios</h3>
+          <p class="tipo-desc">Distribucion con cocina independiente lineal en lacado blanco mate, con columna de horno y microondas integrados. Salon-comedor de doble orientacion con ventana panoramica de cuatro hojas. Calacatta Gold continuo en salon y dormitorios.</p>
+          <div class="tipo-features">
+            <div class="tf-row"><span class="tf-key">Dormitorios</span><span class="tf-val">2 (principal + secundario)</span></div>
+            <div class="tf-row"><span class="tf-key">Banos</span><span class="tf-val">1 bano completo · Porcelanosa</span></div>
+            <div class="tf-row"><span class="tf-key">Cocina</span><span class="tf-val">Independiente · Blanco mate · Rocasa</span></div>
+            <div class="tf-row"><span class="tf-key">Pavimento</span><span class="tf-val">Calacatta Gold · Junta perdida</span></div>
+            <div class="tf-row tf-row-highlight"><span class="tf-key">Garaje</span><span class="tf-val">Plaza incluida</span></div>
+            <div class="tf-row tf-row-highlight"><span class="tf-key">Bicicleta</span><span class="tf-val">Trastero incluido</span></div>
+            <div class="tf-row"><span class="tf-key">Superficie</span><span class="tf-val">A confirmar</span></div>
+            <div class="tf-row"><span class="tf-key">Precio</span><span class="tf-val">Consultar</span></div>
+          </div>
+          <div class="tipo-brands">
+            <span>PORCELANOSA</span><span>ROCASA</span><span>NOKEN</span><span>GAMADECOR</span>
+          </div>
+          <div class="tipo-actions">
+            <a href="planos/1B.pdf" target="_blank" class="btn-outline-sage">Ver plano</a>
+            <a href="#contacto" class="btn-sage-sm">Solicitar info</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 1C -->
+    <div class="tipo-content" id="tc-1c">
+      <div class="tipo-layout">
+        <div class="tipo-gallery">
+          <div class="tg-main">
+            <img src="renders/1c_estancia.png" alt="1C - Estancia" class="tg-hero active img-enhance" id="1c-main">
+          </div>
+          <div class="tg-thumbs">
+            <div class="tg-thumb active" data-img="renders/1c_estancia.png" data-target="1c-main"><img src="renders/1c_estancia.png" alt="Estancia" class="img-enhance"></div>
+            <div class="tg-thumb" data-img="renders/1c_cocina.png" data-target="1c-main"><img src="renders/1c_cocina.png" alt="Cocina" class="img-enhance"></div>
+            <div class="tg-thumb" data-img="renders/1c_bano.png" data-target="1c-main"><img src="renders/1c_bano.png" alt="Bano" class="img-enhance"></div>
+          </div>
+        </div>
+        <div class="tipo-info fade-up">
+          <div class="tipo-tag">Tipologia C · 2 unidades (P1 + P2)</div>
+          <h3>1 Dormitorio</h3>
+          <p class="tipo-desc">Espacio de concepto abierto donde un biombo de listones verticales en roble natural separa la zona de noche de la de dia. Pavimento en aparejo espiga 45 grados, cocina en L con frentes gris topo mate y bano completo con Porcelanosa Line Taranto Bone.</p>
+          <div class="tipo-features">
+            <div class="tf-row"><span class="tf-key">Dormitorios</span><span class="tf-val">1 (separado por biombo de roble)</span></div>
+            <div class="tf-row"><span class="tf-key">Banos</span><span class="tf-val">1 bano completo · Porcelanosa</span></div>
+            <div class="tf-row"><span class="tf-key">Cocina</span><span class="tf-val">En L · Gris topo mate · Rocasa</span></div>
+            <div class="tf-row"><span class="tf-key">Pavimento</span><span class="tf-val">Calacatta Gold espiga 45°</span></div>
+            <div class="tf-row tf-row-highlight"><span class="tf-key">Garaje</span><span class="tf-val">Plaza incluida</span></div>
+            <div class="tf-row tf-row-highlight"><span class="tf-key">Bicicleta</span><span class="tf-val">Trastero incluido</span></div>
+            <div class="tf-row"><span class="tf-key">Superficie</span><span class="tf-val">A confirmar</span></div>
+            <div class="tf-row"><span class="tf-key">Precio</span><span class="tf-val">Consultar</span></div>
+          </div>
+          <div class="tipo-brands">
+            <span>PORCELANOSA</span><span>ROCASA</span><span>NOKEN</span><span>GAMADECOR</span>
+          </div>
+          <div class="tipo-actions">
+            <a href="planos/1C.pdf" target="_blank" class="btn-outline-sage">Ver plano</a>
+            <a href="#contacto" class="btn-sage-sm">Solicitar info</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Aticos -->
+    <div class="aticos-banner fade-up">
+      <div class="aticos-inner">
+        <div class="aticos-star-icon">VM3</div>
+        <div>
+          <h4>2 Aticos en Exclusiva</h4>
+          <p>Disponemos en exclusiva de <strong>dos unidades de atico</strong> de caracteristicas excepcionales. Terraza privada, vistas panoramicas y disponibilidad muy limitada. Incluyen plaza de garaje y trastero de bicicleta.</p>
+        </div>
+        <a href="#contacto" class="btn-sage">Solicitar informacion atico</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALERIA -->
+<section id="galeria" class="section-galeria">
+  <div class="galeria-header fade-up">
+    <h2>Cada espacio, una experiencia.</h2>
+  </div>
+  <div class="galeria-grid">
+    <div class="gal fade-up"><img src="renders/fachada.png" alt="Fachada" class="img-enhance"></div>
+    <div class="gal fade-up delay-1"><img src="renders/pb_salon.png" alt="Salon PB" class="img-enhance"></div>
+    <div class="gal gal-tall fade-up delay-2"><img src="renders/1a_bano.png" alt="Bano 1A" class="img-enhance"></div>
+    <div class="gal fade-up"><img src="renders/1a_salon.png" alt="Salon 1A" class="img-enhance"></div>
+    <div class="gal fade-up delay-1"><img src="renders/pb_bano.png" alt="Bano PB" class="img-enhance"></div>
+    <div class="gal gal-wide fade-up"><img src="renders/1c_estancia.png" alt="Estancia 1C" class="img-enhance"></div>
+    <div class="gal fade-up delay-2"><img src="renders/1b_cocina.png" alt="Cocina 1B" class="img-enhance"></div>
+    <div class="gal fade-up"><img src="renders/1a_aseo.png" alt="Aseo 1A" class="img-enhance"></div>
+    <div class="gal fade-up delay-1"><img src="renders/1c_cocina.png" alt="Cocina 1C" class="img-enhance"></div>
+  </div>
+  <p class="galeria-disclaimer">Las imagenes y renders mostrados son ilustrativos y no constituyen una representacion exacta del proyecto final, que podra estar sujeto a modificaciones tecnicas o de diseno.</p>
+</section>
+
+<!-- CALIDADES -->
+<section id="calidades" class="section-calidades">
+  <div class="container">
+    <div class="section-head fade-up">
+      <p class="eyebrow">Memoria de Calidades</p>
+      <h2>Materiales que elevan<br>cada espacio.</h2>
+      <p class="section-sub">Una seleccion de materiales y marcas de primer nivel, elegidos por su capacidad de crear ambientes de lujo discreto y permanente.</p>
+    </div>
+    <div class="cal-brands fade-up delay-1">
+      <div class="cal-brand-item">
+        <div class="cb-logo">PORCELANOSA</div>
+        <p class="cb-desc">Pavimentos y revestimientos de bano. Calacatta Gold Nature L para zonas de dia, Line Taranto Bone en banos. Gran formato, acabados rectificados.</p>
+      </div>
+      <div class="cal-brand-item">
+        <div class="cb-logo">ROCASA</div>
+        <p class="cb-desc">Cocinas a medida con frentes en lacados mate sin tirador (push-open). Cuatro acabados distintos segun tipologia: antracita, blanco, gris topo e isleta de piedra.</p>
+      </div>
+      <div class="cal-brand-item">
+        <div class="cb-logo">NOKEN</div>
+        <p class="cb-desc">Sanitarios suspendidos Essence-C Rimless con cisterna empotrada. Espejos Smart Line Light retroiluminados LED con funcion antivaho.</p>
+      </div>
+      <div class="cal-brand-item">
+        <div class="cb-logo">GAMADECOR</div>
+        <p class="cb-desc">Muebles de bano Nature en roble natural suspendido con sistema push-open y dos cajones. Lavabo integrado de porcelana blanca.</p>
+      </div>
+    </div>
+    <div class="cal-specs fade-up delay-2">
+      <div class="cs-col">
+        <h4>Fachada y Exterior</h4>
+        <ul>
+          <li>Panel hormigon arquitectonico gran formato · Junta rehundida</li>
+          <li>Lamas aluminio nervado antracita · Zocalo planta baja</li>
+          <li>Carpinteria aluminio negro RPT · RAL 9005 · Rotura puente termico</li>
+          <li>Vidrio doble bajo-emisivo en todas las ventanas</li>
+        </ul>
+      </div>
+      <div class="cs-col">
+        <h4>Instalaciones</h4>
+        <ul>
+          <li>Armarios empotrados toda altura · DM lacado blanco · Push-open</li>
+          <li>Focos LED orientables empotrados 2.700K · Dimmer en salon</li>
+          <li>Tira LED perimetral encubierta (exclusivo Planta Baja)</li>
+          <li>Electrodomesticos gama alta integrados · Bosch / Siemens / AEG</li>
+        </ul>
+      </div>
+      <div class="cs-col">
+        <h4>Acabados</h4>
+        <ul>
+          <li>Griferia negro mate (1A, 1C, aseos) · Acero cepillado (PB, 1B)</li>
+          <li>Plato de ducha resina blanca enrasado · Sumidero lineal acero</li>
+          <li>Mampara aluminio negro + vidrio templado 8 mm</li>
+          <li>Pintura plastica mate off-white · Rodapie DM lacado</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CALENDARIO -->
+<section id="calendario" class="section-calendario">
+  <div class="container">
+    <div class="section-head fade-up" style="text-align:center">
+      <p class="eyebrow">Calendario de Obra</p>
+      <h2>Un proyecto con futuro.</h2>
+      <p class="section-sub-dark" style="text-align:center;max-width:600px;margin:1rem auto 0">Vizconde de Matamala 3 avanza segun un calendario cuidadosamente planificado, garantizando el cumplimiento de cada etapa del proceso.</p>
+    </div>
+
+    <div class="cal-hitos fade-up delay-1">
+      <div class="hito hito-top" style="left:40%">
+        <div class="hito-line"></div>
+        <div class="hito-label">Feb '27: Tabiqueria</div>
+      </div>
+      <div class="hito hito-top" style="left:56%">
+        <div class="hito-line"></div>
+        <div class="hito-label">Abr '27: Instalaciones</div>
+      </div>
+      <div class="hito hito-top" style="left:70%">
+        <div class="hito-line"></div>
+        <div class="hito-label">Jun '27: Acabados</div>
+      </div>
+      <div class="hito hito-top" style="left:84%">
+        <div class="hito-line"></div>
+        <div class="hito-label">Ago '27: Carpinterias</div>
+      </div>
+    </div>
+
+    <div class="cal-timeline-wrap fade-up delay-2">
+      <div class="cal-timeline">
+        <div class="cal-track"></div>
+        <div class="ct-item">
+          <div class="ct-img"><img src="renders/fachada.png" alt="Previos" class="img-enhance"></div>
+          <div class="ct-dot"></div>
+          <div class="ct-date">Hoy · 2026</div>
+          <div class="ct-label">Preventa y Proyecto</div>
+        </div>
+        <div class="ct-item">
+          <div class="ct-img"><img src="renders/pb_salon.png" alt="Inicio" class="img-enhance"></div>
+          <div class="ct-dot ct-dot-active"></div>
+          <div class="ct-date">Nov '26</div>
+          <div class="ct-label">Inicio de Obra</div>
+        </div>
+        <div class="ct-item">
+          <div class="ct-img"><img src="renders/pb_bano.png" alt="Obra gruesa" class="img-enhance"></div>
+          <div class="ct-dot"></div>
+          <div class="ct-date">Dic '26</div>
+          <div class="ct-label">Obra Gruesa</div>
+        </div>
+        <div class="ct-item">
+          <div class="ct-img"><img src="renders/1a_salon.png" alt="Tabiqueria" class="img-enhance"></div>
+          <div class="ct-dot"></div>
+          <div class="ct-date">Feb '27</div>
+          <div class="ct-label">Tabiqueria</div>
+        </div>
+        <div class="ct-item">
+          <div class="ct-img"><img src="renders/1b_cocina.png" alt="Instalaciones" class="img-enhance"></div>
+          <div class="ct-dot"></div>
+          <div class="ct-date">Abr '27</div>
+          <div class="ct-label">Instalaciones</div>
+        </div>
+        <div class="ct-item">
+          <div class="ct-img"><img src="renders/fachada.png" alt="Cerramientos" class="img-enhance"></div>
+          <div class="ct-dot"></div>
+          <div class="ct-date">May '27</div>
+          <div class="ct-label">Cerramientos y Fachada</div>
+        </div>
+        <div class="ct-item">
+          <div class="ct-img"><img src="renders/1c_bano.png" alt="Revestimientos" class="img-enhance"></div>
+          <div class="ct-dot"></div>
+          <div class="ct-date">Jun '27</div>
+          <div class="ct-label">Revestimientos</div>
+        </div>
+        <div class="ct-item">
+          <div class="ct-img"><img src="renders/1a_bano.png" alt="Acabados" class="img-enhance"></div>
+          <div class="ct-dot"></div>
+          <div class="ct-date">Jul '27</div>
+          <div class="ct-label">Acabados</div>
+        </div>
+        <div class="ct-item">
+          <div class="ct-img"><img src="renders/1a_dormitorio.png" alt="Carpinterias" class="img-enhance"></div>
+          <div class="ct-dot"></div>
+          <div class="ct-date">Ago '27</div>
+          <div class="ct-label">Carpinterias y Cocinas</div>
+        </div>
+        <div class="ct-item ct-item-last">
+          <div class="ct-img ct-img-gold"><img src="renders/1c_estancia.png" alt="Entrega" class="img-enhance"></div>
+          <div class="ct-dot ct-dot-gold"></div>
+          <div class="ct-date ct-date-gold">Sep '27</div>
+          <div class="ct-label ct-label-gold">Entrega de Viviendas</div>
+        </div>
+      </div>
+    </div>
+
+    <p class="cal-nota fade-up delay-3">Inicio de obra garantizado Noviembre 2026 · 10 meses de ejecucion · Certificaciones parciales en cada fase</p>
+  </div>
+</section>
+
+<!-- PLAN DE PAGOS -->
+<section id="pagos" class="section-pagos">
+  <div class="container">
+    <div class="section-head fade-up" style="text-align:center">
+      <p class="eyebrow">Distribucion de Plazos</p>
+      <h2>Un plan de pagos<br>claro y seguro.</h2>
+    </div>
+    <div class="pagos-timeline fade-up delay-1">
+      <div class="pt-item">
+        <div class="pt-pct">10<span>%</span></div>
+        <div class="pt-line"></div>
+        <div class="pt-body">
+          <h5>Reserva</h5>
+          <p>Firma de arras y reserva ante notario. Confirma la titularidad.</p>
+          <span class="pt-when">Al firmar</span>
+        </div>
+      </div>
+      <div class="pt-item">
+        <div class="pt-pct">10<span>%</span></div>
+        <div class="pt-line"></div>
+        <div class="pt-body">
+          <h5>Inicio de Obra</h5>
+          <p>Pago vinculado al inicio formal de la rehabilitacion.</p>
+          <span class="pt-when">Nov 2026</span>
+        </div>
+      </div>
+      <div class="pt-item">
+        <div class="pt-pct">20<span>%</span></div>
+        <div class="pt-line"></div>
+        <div class="pt-body">
+          <h5>Obra Gruesa</h5>
+          <p>Al completarse estructura y fachada. Acreditable con certificacion tecnica.</p>
+          <span class="pt-when">May 2027</span>
+        </div>
+      </div>
+      <div class="pt-item">
+        <div class="pt-pct">20<span>%</span></div>
+        <div class="pt-line"></div>
+        <div class="pt-body">
+          <h5>Fin de Obra</h5>
+          <p>Al obtener el Certificado Final de Obra y licencia de ocupacion.</p>
+          <span class="pt-when">Ago 2027</span>
+        </div>
+      </div>
+      <div class="pt-item">
+        <div class="pt-pct">40<span>%</span></div>
+        <div class="pt-line"></div>
+        <div class="pt-body">
+          <h5>Escrituracion</h5>
+          <p>Saldo final a la firma ante notario. Posibilidad de hipoteca con bancos colaboradores.</p>
+          <span class="pt-when">Sep 2027</span>
+        </div>
+      </div>
+    </div>
+    <p class="pagos-nota fade-up delay-2">Aval bancario por cantidades entregadas · Seguro decenal incluido · Asesoramiento fiscal personalizado</p>
+  </div>
+</section>
+
+<!-- UBICACION — Estilo LDV21 -->
+<section id="ubicacion" class="section-ubicacion">
+  <div class="ubic-layout">
+    <div class="ubic-map-side fade-up">
+      <iframe
+        src="https://maps.google.com/maps?q=Calle+del+Vizconde+de+Matamala+3+Madrid+Espana&output=embed&hl=es&z=16"
+        title="Mapa Vizconde de Matamala 3, Madrid"
+        id="mapa-vcm3"
+        loading="lazy"
+        allowfullscreen
+      ></iframe>
+      <div class="map-marker-label">
+        <span class="vcm-pin">VM3</span>
+        Vizconde de Matamala, 3 · Madrid
+      </div>
+    </div>
+    <div class="ubic-text-side fade-up delay-2">
+      <p class="eyebrow" style="color:var(--sage-dark)">Ubicacion</p>
+      <h3>Una localizacion excepcional.</h3>
+      <p class="ubic-body">Vizconde de Matamala 3 se encuentra en el corazon de Madrid, en uno de los enclaves mas valorados de la capital. Una direccion que combina la tranquilidad de una calle con caracter historico con la proximidad a todos los servicios, comercios y zonas verdes de la ciudad.</p>
+      <p class="ubic-body">Rodeada de los mejores restaurantes, galerías de arte, mercados tradicionales y excelentes conexiones de transporte publico, esta ubicacion ofrece todo lo que una vida en Madrid puede dar.</p>
+      <p class="ubic-addr">Calle del Vizconde de Matamala, 3 · Madrid</p>
+      <div class="ubic-distances">
+        <div class="ud-item"><span class="ud-time">5'</span><span class="ud-place">Metro</span></div>
+        <div class="ud-item"><span class="ud-time">10'</span><span class="ud-place">Centro</span></div>
+        <div class="ud-item"><span class="ud-time">15'</span><span class="ud-place">Retiro</span></div>
+        <div class="ud-item"><span class="ud-time">30'</span><span class="ud-place">Aeropuerto</span></div>
+      </div>
+      <a href="#contacto" class="btn-sage" style="display:inline-flex;margin-top:2rem">Solicita mas informacion</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto" class="section-contacto">
+  <div class="container">
+    <div class="contacto-grid">
+      <div class="contacto-info fade-up">
+        <p class="eyebrow sage">Contacto</p>
+        <h2>Hablemos.</h2>
+        <p class="body-text" style="margin-bottom:2.5rem">Nuestro equipo esta disponible para resolver todas tus dudas y acompanarte en cada paso del proceso de adquisicion.</p>
+        <div class="ci-list">
+          <div class="ci-item">
+            <span class="ci-label">Direccion de promocion</span>
+            <span>Calle del Vizconde de Matamala, 3<br>Madrid</span>
+          </div>
+          <div class="ci-item">
+            <span class="ci-label">Oficina DASAR Gestion</span>
+            <span>Calle Marques de Urquijo, 26<br>33203 Gijon · Asturias</span>
+          </div>
+          <div class="ci-item">
+            <span class="ci-label">Telefono</span>
+            <span><a href="tel:+34984277119">984 277 119</a></span>
+          </div>
+          <div class="ci-item">
+            <span class="ci-label">Email</span>
+            <span><a href="mailto:info@dasargestion.com">info@dasargestion.com</a></span>
+          </div>
+          <div class="ci-item">
+            <span class="ci-label">Web</span>
+            <span><a href="https://www.dasargestion.com" target="_blank">www.dasargestion.com</a></span>
+          </div>
+        </div>
+        <div class="ci-dasar">
+          <a href="https://www.dasargestion.com" target="_blank" rel="noopener" aria-label="Web DASAR Gestion">
+            <img src="renders/dasar_logo_color.png" alt="DASAR Gestion">
+          </a>
+        </div>
+      </div>
+
+      <div class="contacto-form fade-up delay-2">
+        <form id="contactForm" action="https://formsubmit.co/info@dasargestion.com" method="POST" novalidate>
+          <input type="hidden" name="_subject" value="Nueva consulta - Vizconde de Matamala 3">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_next" value="">
+          <div class="form-row">
+            <div class="fg">
+              <label for="nombre">Nombre *</label>
+              <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+            </div>
+            <div class="fg">
+              <label for="apellidos">Apellidos *</label>
+              <input type="text" id="apellidos" name="apellidos" placeholder="Tus apellidos" required>
+            </div>
+          </div>
+          <div class="fg">
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+          </div>
+          <div class="fg">
+            <label for="telefono">Telefono</label>
+            <input type="tel" id="telefono" name="telefono" placeholder="+34 600 000 000">
+          </div>
+          <div class="fg">
+            <label for="tipologia">Tipologia de interes</label>
+            <select id="tipologia" name="tipologia">
+              <option value="">— Seleccionar —</option>
+              <option value="pb">Planta Baja · 3 dormitorios</option>
+              <option value="1a">Tipologia A · 2 dormitorios (P1 o P2)</option>
+              <option value="1b">Tipologia B · 2 dormitorios (P1 o P2)</option>
+              <option value="1c">Tipologia C · 1 dormitorio (P1 o P2)</option>
+              <option value="atico">Atico (disponibilidad exclusiva)</option>
+            </select>
+          </div>
+          <div class="fg">
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" rows="4" placeholder="En que podemos ayudarte?"></textarea>
+          </div>
+          <label class="check-wrap">
+            <input type="checkbox" id="privacy" name="privacy" required>
+            <span>He leido y acepto la <a href="#lopd">politica de privacidad</a> y el tratamiento de mis datos personales.</span>
+          </label>
+          <button type="submit" class="btn-sage full" id="submitBtn">Enviar solicitud</button>
+          <p class="form-success" id="formSuccess" style="display:none">Solicitud recibida. Te contactaremos en menos de 24 horas.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROTECCION DE DATOS -->
+<section id="lopd" class="section-lopd">
+  <div class="container">
+    <div class="lopd-inner fade-up">
+      <h4>Proteccion de Datos</h4>
+      <p>En cumplimiento del Reglamento (UE) 2016/679 del Parlamento Europeo y del Consejo (RGPD) y la Ley Organica 3/2018, de 5 de diciembre, de Proteccion de Datos Personales y garantia de los derechos digitales (LOPDGDD), le informamos de que los datos personales facilitados seran tratados por <strong>DASAR Gestion</strong>, con domicilio en Calle Marques de Urquijo 26, 33203 Gijon, Asturias, como responsable del tratamiento, con la finalidad de atender su solicitud de informacion y, en su caso, mantenerle informado sobre la promocion inmobiliaria Vizconde de Matamala 3.</p>
+      <p>Los datos no seran cedidos a terceros salvo obligacion legal. Puede ejercer sus derechos de acceso, rectificacion, supresion, portabilidad, limitacion y oposicion al tratamiento escribiendo a <a href="mailto:info@dasargestion.com">info@dasargestion.com</a>, acompanando copia de su documento de identidad. Asimismo, tiene derecho a presentar una reclamacion ante la Agencia Espanola de Proteccion de Datos (www.aepd.es).</p>
+      <p class="lopd-renders"><strong>Nota sobre imagenes:</strong> Las imagenes y renders mostrados son ilustrativos y no constituyen una representacion exacta del proyecto final, que podra estar sujeto a modificaciones tecnicas o de diseno.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="ft-brand">
+        <img src="renders/LOGO.png" alt="Vizconde de Matamala 3" class="ft-logo">
+        <p>9 residencias exclusivas en Madrid. Una rehabilitacion que fusiona historia y contemporaneidad. Plaza de garaje incluida.</p>
+      </div>
+      <div class="ft-links">
+        <h5>Secciones</h5>
+        <a href="#proyecto">El Proyecto</a>
+        <a href="#viviendas">Elige tu Hogar</a>
+        <a href="#galeria">Galeria</a>
+        <a href="#calidades">Calidades</a>
+        <a href="#calendario">Calendario</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+      <div class="ft-links">
+        <h5>Tipologias</h5>
+        <a href="#viviendas">Planta Baja · 3 hab.</a>
+        <a href="#viviendas">Tipo A · 2 dorm. (x2)</a>
+        <a href="#viviendas">Tipo B · 2 dorm. (x2)</a>
+        <a href="#viviendas">Tipo C · 1 dorm. (x2)</a>
+        <a href="#contacto">Aticos (exclusiva x2)</a>
+      </div>
+      <div class="ft-contact">
+        <h5>Promotor</h5>
+        <a href="https://www.dasargestion.com" target="_blank">
+          <img src="renders/dasar_logo_blanco.png" alt="DASAR Gestion" class="ft-dasar">
+        </a>
+        <p>
+          Marques de Urquijo 26<br>
+          33203 Gijon · Asturias<br>
+          <a href="tel:+34623182905">623 182 905</a><br>
+          <a href="mailto:info@dasargestion.com">info@dasargestion.com</a>
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Las imagenes y renders mostrados son ilustrativos y no constituyen una representacion exacta del proyecto final, que podra estar sujeto a modificaciones tecnicas o de diseno.</p>
+      <p class="ft-legal">© 2026 DASAR Gestion · Vizconde de Matamala 3 · Todos los derechos reservados · <a href="#lopd">Proteccion de Datos</a></p>
+    </div>
+  </div>
+</footer>
+
+<button class="back-top" id="backTop" aria-label="Volver arriba">&#8593;</button>
+
+<!-- WHATSAPP FLOTANTE -->
+<a href="https://wa.me/34623182905?text=Hola%2C%20estoy%20interesado%20en%20Vizconde%20de%20Matamala%203.%20Podeis%20informarme%3F" target="_blank" rel="noopener" class="whatsapp-btn" id="whatsappBtn" aria-label="Contactar por WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" width="26" height="26">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.886 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+  <span class="wa-tooltip">Hablamos?</span>
+</a>
+
+<script src="script.js"></script>
+</body>
+</html>
