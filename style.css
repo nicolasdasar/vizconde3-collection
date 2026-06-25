@@ -302,7 +302,7 @@ h2 { font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 300; line-height: 1.15; l
 .marquee-track {
   display: flex; align-items: stretch;
   height: 480px;
-  animation: marquee-scroll 25s linear infinite;
+  animation: marquee-scroll 20s linear infinite;
   will-change: transform;
 }
 .marquee-track.paused { animation-play-state: paused; }
