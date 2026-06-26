@@ -29,13 +29,14 @@
 .preloader-fill {
   position: absolute; left: 0; top: 0; bottom: 0;
   background: linear-gradient(90deg, #c9a84c, #e8c97a);
-  width: 0; transition: width 0.3s ease;
+  width: 0; transition: width 0.4s ease;
 }
 .preloader-text {
-  font-size: 0.6rem; letter-spacing: 4px;
-  color: rgba(255,255,255,0.3);
+  font-size: 0.62rem; letter-spacing: 4px;
+  color: rgba(255,255,255,0.92);
   text-transform: uppercase;
   font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }

@@ -8,10 +8,10 @@
 
   let progress = 0;
   const ticker = setInterval(() => {
-    progress += Math.random() * 18;
+    progress += Math.random() * 10;
     if (progress > 90) progress = 90;
     if (preloaderFill) preloaderFill.style.width = progress + '%';
-  }, 120);
+  }, 160);
 
   window.addEventListener('load', () => {
     clearInterval(ticker);
