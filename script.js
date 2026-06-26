@@ -2,6 +2,25 @@
 (function () {
   'use strict';
 
+  /* ── PRELOADER ── */
+  const preloader = document.getElementById('preloader');
+  const preloaderFill = document.getElementById('preloaderFill');
+
+  let progress = 0;
+  const ticker = setInterval(() => {
+    progress += Math.random() * 18;
+    if (progress > 90) progress = 90;
+    if (preloaderFill) preloaderFill.style.width = progress + '%';
+  }, 120);
+
+  window.addEventListener('load', () => {
+    clearInterval(ticker);
+    if (preloaderFill) preloaderFill.style.width = '100%';
+    setTimeout(() => {
+      if (preloader) preloader.classList.add('hidden');
+    }, 500);
+  });
+
   /* ── HEADER SCROLL ── */
   const header = document.getElementById('header');
   const backTop = document.getElementById('backTop');
