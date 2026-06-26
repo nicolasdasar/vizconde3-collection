@@ -18,10 +18,9 @@
   display: flex; flex-direction: column; align-items: center; gap: 1.6rem;
 }
 .preloader-logo img {
-  width: 260px; height: auto;
-  mix-blend-mode: screen;
-  filter: contrast(1.1) brightness(0.95);
+  width: 280px; height: auto;
   display: block;
+  opacity: 0.9;
 }
 .preloader-bar {
   width: 180px; height: 1px;
