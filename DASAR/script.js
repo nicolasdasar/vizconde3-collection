@@ -262,7 +262,30 @@
     mqWrap.addEventListener('mouseleave', () => mqTrack.classList.remove('paused'));
   }
 
-  console.log('✦ VCM3 V2 — DASAR Gestión · Loaded');
+  /* ── INTERACTIVE LEAFLET MAP ── */
+  const mapElement = document.getElementById('mapa-vcm3');
+  if (mapElement && typeof L !== 'undefined') {
+    const lat = 40.4285;
+    const lng = -3.6661;
+    const map = L.map('mapa-vcm3', {
+      center: [lat, lng],
+      zoom: 15,
+      zoomControl: true,
+      scrollWheelZoom: false
+    });
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
+    }).addTo(map);
+    L.circle([lat, lng], {
+      color: '#000000',
+      fillColor: '#000000',
+      fillOpacity: 0.05,
+      weight: 2.5,
+      radius: 350
+    }).addTo(map);
+  }
+
+  console.log('✦ V3 Collection V2 — DASAR Gestión · Loaded');
 })();
 
 /* ── sendContactForm — igual que Campón Salinas ── */
