@@ -1,4 +1,4 @@
-/* Vizconde de Matamala 3 — V2 JavaScript */
+/* V3 Collection — V2 JavaScript */
 (function () {
   'use strict';
 
