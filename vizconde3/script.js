@@ -1,0 +1,291 @@
+/* Vizconde de Matamala 3 — V2 JavaScript */
+(function () {
+  'use strict';
+
+  /* ── PRELOADER ── */
+  const preloader = document.getElementById('preloader');
+  const preloaderFill = document.getElementById('preloaderFill');
+
+  let progress = 0;
+  const ticker = setInterval(() => {
+    progress += Math.random() * 10;
+    if (progress > 90) progress = 90;
+    if (preloaderFill) preloaderFill.style.width = progress + '%';
+  }, 160);
+
+  window.addEventListener('load', () => {
+    clearInterval(ticker);
+    if (preloaderFill) preloaderFill.style.width = '100%';
+    setTimeout(() => {
+      if (preloader) preloader.classList.add('hidden');
+    }, 500);
+  });
+
+  /* ── HEADER SCROLL ── */
+  const header = document.getElementById('header');
+  const backTop = document.getElementById('backTop');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 50);
+    backTop.classList.toggle('show', window.scrollY > 600);
+  }, { passive: true });
+
+  /* ── BURGER / MOBILE NAV ── */
+  const burger = document.getElementById('burger');
+  const mobileNav = document.getElementById('mobileNav');
+  burger.addEventListener('click', () => {
+    const open = burger.classList.toggle('open');
+    mobileNav.classList.toggle('open', open);
+    mobileNav.setAttribute('aria-hidden', !open);
+    burger.setAttribute('aria-expanded', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+  window.closeMobileNav = function () {
+    burger.classList.remove('open');
+    mobileNav.classList.remove('open');
+    mobileNav.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  };
+
+  /* ── HERO SLIDER ── */
+  (function () {
+    const slides = document.querySelectorAll('.hero-slide');
+    const indCont = document.getElementById('heroIndicators');
+    const count = document.getElementById('heroCount');
+    let cur = 0, timer;
+    const total = slides.length;
+
+    slides.forEach((_, i) => {
+      const d = document.createElement('button');
+      d.className = 'hi-dot' + (i === 0 ? ' active' : '');
+      d.setAttribute('aria-label', 'Slide ' + (i + 1));
+      d.addEventListener('click', () => goTo(i));
+      indCont.appendChild(d);
+    });
+
+    function goTo(n) {
+      slides[cur].classList.remove('active');
+      document.querySelectorAll('.hi-dot')[cur].classList.remove('active');
+      cur = (n + total) % total;
+      slides[cur].classList.add('active');
+      document.querySelectorAll('.hi-dot')[cur].classList.add('active');
+      if (count) count.textContent = (cur + 1) + ' / ' + total;
+      clearInterval(timer);
+      timer = setInterval(() => goTo(cur + 1), 5500);
+    }
+
+    document.getElementById('heroPrev')?.addEventListener('click', () => goTo(cur - 1));
+    document.getElementById('heroNext')?.addEventListener('click', () => goTo(cur + 1));
+
+    // Touch swipe
+    let tx = 0;
+    const hero = document.getElementById('hero');
+    hero.addEventListener('touchstart', e => { tx = e.touches[0].clientX; }, { passive: true });
+    hero.addEventListener('touchend', e => {
+      const d = tx - e.changedTouches[0].clientX;
+      if (Math.abs(d) > 50) d > 0 ? goTo(cur + 1) : goTo(cur - 1);
+    }, { passive: true });
+
+    timer = setInterval(() => goTo(cur + 1), 5500);
+  })();
+
+  /* ── TIPOLOGÍA SELECTOR ── */
+  (function () {
+    const btns = document.querySelectorAll('.ts-btn');
+    const panels = document.querySelectorAll('.tipo-content');
+    btns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        btns.forEach(b => b.classList.remove('active'));
+        panels.forEach(p => p.classList.remove('active'));
+        btn.classList.add('active');
+        const panel = document.getElementById('tc-' + btn.dataset.t);
+        if (panel) panel.classList.add('active');
+      });
+    });
+  })();
+
+  /* ── PLANTA P1 / P2 TOGGLE ── */
+  (function () {
+    const tagLabels = { '1a': ['Vivienda 1A · Planta 1', 'Vivienda 2A · Planta 2'], '1b': ['Vivienda 1B · Planta 1', 'Vivienda 2B · Planta 2'], '1c': ['Vivienda 1C · Planta 1', 'Vivienda 2C · Planta 2'] };
+    document.querySelectorAll('.planta-toggle').forEach(toggle => {
+      const tipo = toggle.dataset.tipo;
+      const plBtns = toggle.querySelectorAll('.pl-btn');
+      const tag = document.getElementById('tag-' + tipo);
+      const panel = toggle.closest('.tipo-content');
+      plBtns.forEach((btn, i) => {
+        btn.addEventListener('click', () => {
+          plBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          const planta = btn.dataset.planta; // 'p1' or 'p2'
+          if (tag && tagLabels[tipo]) tag.textContent = tagLabels[tipo][i];
+          panel.querySelectorAll('.pl-val').forEach(el => {
+            el.textContent = el.dataset[planta] || el.textContent;
+          });
+        });
+      });
+    });
+  })();
+
+  /* ── THUMBNAIL GALLERY ── */
+  document.querySelectorAll('.tg-thumb').forEach(thumb => {
+    thumb.addEventListener('click', () => {
+      const img = thumb.dataset.img;
+      const targetId = thumb.dataset.target;
+      const mainImg = document.getElementById(targetId);
+      if (!mainImg || !img) return;
+      mainImg.style.opacity = '0';
+      setTimeout(() => {
+        mainImg.src = img;
+        mainImg.style.opacity = '1';
+      }, 250);
+      const container = thumb.closest('.tg-thumbs');
+      container.querySelectorAll('.tg-thumb').forEach(t => t.classList.remove('active'));
+      thumb.classList.add('active');
+    });
+  });
+  // Smooth fade for main images
+  document.querySelectorAll('.tg-hero').forEach(img => {
+    img.style.transition = 'opacity 0.35s ease';
+  });
+
+  /* ── STAT COUNTER ── */
+  function animCount(el) {
+    const t = parseInt(el.dataset.count);
+    if (isNaN(t)) return;
+    let c = 0;
+    const step = Math.ceil(t / 30);
+    const iv = setInterval(() => {
+      c = Math.min(c + step, t);
+      el.textContent = c;
+      if (c >= t) clearInterval(iv);
+    }, 40);
+  }
+
+  /* ── INTERSECTION OBSERVER (scroll reveal + counters) ── */
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        e.target.querySelectorAll('[data-count]').forEach(animCount);
+        if (e.target.hasAttribute('data-count')) animCount(e.target);
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.fade-up').forEach(el => io.observe(el));
+
+  /* ── SMOOTH SCROLL ── */
+  window.scrollTo = function (selector) {
+    const el = typeof selector === 'string' ? document.querySelector(selector) : null;
+    if (el) {
+      const top = el.getBoundingClientRect().top + window.pageYOffset - (header?.offsetHeight || 80);
+      window.scroll({ top, behavior: 'smooth' });
+    }
+  };
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        const top = target.getBoundingClientRect().top + window.pageYOffset - (header?.offsetHeight || 80);
+        window.scroll({ top, behavior: 'smooth' });
+      }
+    });
+  });
+
+  /* ── BACK TO TOP ── */
+  backTop.addEventListener('click', () => window.scroll({ top: 0, behavior: 'smooth' }));
+
+  /* ── CONTACT FORM → Microsoft Graph API via Vercel ── */
+  const form      = document.getElementById('contactForm');
+  const success   = document.getElementById('formSuccess');
+  const submitBtn = document.getElementById('submitBtn');
+
+  form?.addEventListener('submit', async e => {
+    e.preventDefault();
+
+    const nombre  = document.getElementById('nombre')?.value.trim();
+    const email   = document.getElementById('email')?.value.trim();
+    const privacy = document.getElementById('privacy')?.checked;
+
+    if (!nombre || !email || !privacy) {
+      alert('Por favor, completa los campos obligatorios y acepta la política de privacidad.');
+      return;
+    }
+
+    submitBtn.textContent = 'Enviando...';
+    submitBtn.disabled = true;
+
+    try {
+      const res = await fetch('https://vcm3-email-api.vercel.app/api/send', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          nombre:    nombre,
+          apellidos: document.getElementById('apellidos')?.value.trim() || '',
+          email:     email,
+          telefono:  document.getElementById('telefono')?.value.trim() || '',
+          tipologia: document.getElementById('tipologia')?.value || '',
+          mensaje:   document.getElementById('mensaje')?.value.trim() || '',
+        })
+      });
+
+      if (res.ok) {
+        submitBtn.textContent = '✓ Enviado';
+        submitBtn.style.background = '#5e7a5a';
+        if (success) {
+          success.style.display = 'block';
+          success.textContent = 'Solicitud recibida. Nos pondremos en contacto en menos de 24 horas.';
+        }
+        setTimeout(() => {
+          form.reset();
+          submitBtn.textContent = 'Enviar solicitud';
+          submitBtn.disabled = false;
+          submitBtn.style.background = '';
+          if (success) success.style.display = 'none';
+        }, 5000);
+      } else {
+        throw new Error('Error del servidor');
+      }
+    } catch {
+      submitBtn.textContent = 'Enviar solicitud';
+      submitBtn.disabled = false;
+      alert('Error al enviar. Por favor, contáctanos en info@dasargestion.com');
+    }
+  });
+
+  /* ── MARQUEE PAUSE ON HOVER ── */
+  const mqWrap  = document.getElementById('marqueeWrap');
+  const mqTrack = document.getElementById('marqueeTrack');
+  if (mqWrap && mqTrack) {
+    mqWrap.addEventListener('mouseenter', () => mqTrack.classList.add('paused'));
+    mqWrap.addEventListener('mouseleave', () => mqTrack.classList.remove('paused'));
+  }
+
+  console.log('✦ VCM3 V2 — DASAR Gestión · Loaded');
+})();
+
+/* ── sendContactForm — igual que Campón Salinas ── */
+function sendContactForm(event) {
+  const btn = document.getElementById('submitBtn');
+  const fb  = document.getElementById('formSuccess');
+  btn.disabled = true;
+  btn.textContent = 'Enviando...';
+  btn.style.opacity = '0.6';
+  setTimeout(() => {
+    btn.textContent = '✓ Enviado';
+    btn.style.background = '#5e7a5a';
+    if (fb) {
+      fb.style.display = 'block';
+      fb.textContent = 'Hemos recibido su consulta. Nos pondremos en contacto en menos de 24 horas.';
+    }
+    setTimeout(() => {
+      document.getElementById('contactForm')?.reset();
+      btn.disabled = false;
+      btn.textContent = 'Enviar solicitud';
+      btn.style.opacity = '1';
+      btn.style.background = '';
+      if (fb) fb.style.display = 'none';
+    }, 5000);
+  }, 1500);
+}
