@@ -700,3 +700,106 @@ form { display: flex; flex-direction: column; gap: 1rem; }
   .ts-btn { padding: 1rem 1.2rem; font-size: 10px; }
   .ubic-distances { grid-template-columns: 1fr 1fr; }
 }
+
+/* ── SECCIÓN ÁTICOS PREMIUM DEDICADA ── */
+.section-aticos {
+  background: var(--cream3);
+  color: var(--dark);
+  padding: 8rem 0;
+  border-top: 1px solid var(--border-dk);
+  border-bottom: 1px solid var(--border-dk);
+}
+.section-aticos h2 {
+  color: var(--ink) !important;
+}
+.section-aticos .section-sub-dark {
+  color: var(--mid) !important;
+}
+.atico-selector {
+  display: flex;
+  align-items: center;
+  border-top: 1px solid var(--border-dk);
+  border-bottom: 1px solid var(--border-dk);
+  margin-bottom: 3rem;
+  background: var(--white);
+  overflow-x: auto;
+}
+.as-btn {
+  background: none;
+  border: none;
+  color: var(--soft);
+  font-family: var(--font);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 1.2rem 2rem;
+  cursor: pointer;
+  transition: var(--trans);
+  white-space: nowrap;
+  position: relative;
+}
+.as-btn::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--sage);
+  transform: scaleX(0);
+  transition: transform 0.3s var(--ease);
+}
+.as-btn:hover {
+  color: var(--ink);
+}
+.as-btn.active {
+  color: var(--ink);
+}
+.as-btn.active::after {
+  transform: scaleX(1);
+}
+.as-sep {
+  width: 1px;
+  height: 22px;
+  background: var(--border-dk);
+  flex-shrink: 0;
+}
+.atico-content {
+  display: none;
+}
+.atico-content.active {
+  display: block;
+}
+.section-aticos .tipo-desc {
+  color: var(--mid) !important;
+  font-size: 0.85rem;
+  line-height: 1.85;
+}
+.section-aticos .tipo-info h3 {
+  color: var(--ink) !important;
+}
+.section-aticos .tf-row {
+  border-bottom: 1px solid var(--border-dk) !important;
+}
+.section-aticos .tf-row-highlight {
+  background: rgba(136, 154, 132, 0.08) !important;
+}
+.section-aticos .tf-key {
+  color: var(--soft) !important;
+}
+.section-aticos .tf-val {
+  color: var(--ink) !important;
+}
+.section-aticos .tipo-tag-gold {
+  background: var(--sage) !important;
+  color: var(--white) !important;
+  font-weight: 700;
+}
+@media (max-width: 900px) {
+  .section-aticos {
+    padding: 5rem 0;
+  }
+}
+
+

@@ -103,6 +103,22 @@
     });
   })();
 
+  /* ── ÁTICO SELECTOR ── */
+  (function () {
+    const btns = document.querySelectorAll('.as-btn');
+    const panels = document.querySelectorAll('.section-aticos .atico-content');
+    btns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        btns.forEach(b => b.classList.remove('active'));
+        panels.forEach(p => p.classList.remove('active'));
+        btn.classList.add('active');
+        const panel = document.getElementById('at-' + btn.dataset.at);
+        if (panel) panel.classList.add('active');
+      });
+    });
+  })();
+
+
   /* ── PLANTA P1 / P2 TOGGLE ── */
   (function () {
     const tagLabels = { '1a': ['Vivienda 1A · Planta 1', 'Vivienda 2A · Planta 2'], '1b': ['Vivienda 1B · Planta 1', 'Vivienda 2B · Planta 2'], '1c': ['Vivienda 1C · Planta 1', 'Vivienda 2C · Planta 2'] };
